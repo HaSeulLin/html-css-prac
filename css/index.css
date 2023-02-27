@@ -1,0 +1,21 @@
+/* 헤더 */
+.header{
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    background-color: white;
+}
+.nav-title{}
+.nav-menu{
+    display: flex;
+    float: right;
+}
+/* 메인 */
+.main{
+
+}
+/* 섹션1 */
+.section1-wrap{
+    background-image: url();
+    width: 100%;
+}
