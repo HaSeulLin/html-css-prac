@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main-style.css">
 </head>
 <body>
+    <a name="#top"></a>
     <header class="header">
         <!-- 고정 네비게이션 바 -->
-        <nav class="nav-title">
-            <h1>부산 희망 드림 빛 축제</h1>
+        <nav class="nav">
+            <h1 class="nav-title">부산 희망 드림 빛 축제</h1>
             <ul class="nav-menu">
                 <li><a href="">오시는 길</a></li>
                 <li><a href="">문의사항</a></li>
@@ -68,9 +70,11 @@
         <!-- section3-wrap 배경색 수정 -->
         <div class="section3-wrap">
             <!-- 이미지와 설명 -->
-            <section class="section3-section3-gallery">
-                <h1>시민 갤러리</h1>
-                <a href="">더보기</a>
+            <section class="section3-gallery">
+                <div class="gallery-title">
+                    <h1>시민 갤러리</h1>
+                    <a href="">더보기</a>
+                </div>
                 <div class="gallery-board">
                     <div class="image"></div>
                     <h4>제목</h4>
@@ -91,7 +95,16 @@
         <!-- 섹션 3 행사이미지 끝 -->
         <!-- 섹션 4 뉴스 시작 -->
         <section class="section4-news">
+            <h1>관련 뉴스</h1>
             <table>
+                <tr>
+                    <td>날짜</td>
+                    <td>제목</td>
+                </tr>
+                <tr>
+                    <td>날짜</td>
+                    <td>제목</td>
+                </tr>
                 <tr>
                     <td>날짜</td>
                     <td>제목</td>
@@ -103,22 +116,26 @@
     <!-- 푸터 시작 -->
     <footer class="footer">
         <div class="footer-content">
-            <img src="" alt="로고">
-            <p>주소</p>
-            <p>전화 번호</p>
-            <p>이 웹페이지를 만든 회사</p>
             <a href="">
-                <img src="" alt="페이스북">
+                <img src="./img/house-solid.svg" width="40" alt="홈logo">
+            </a>
+            <div class="footer-info">
+                <p>주소</p>
+                <p>전화 번호</p>
+                <p>이 웹페이지를 만든 회사</p>
+            </div>
+            <a href="">
+                <img src="./img/facebook.svg" width="40" alt="페이스북">
             </a>
             <a href="">
-                <img src="" alt="인스타">
+                <img src="./img/instagram.svg" width="40" alt="인스타">
             </a>
         </div>
     </footer>
     <!-- 푸터 끝 -->
     <!-- top버튼 시작 -->
     <div class="top-button">
-        <a href="">Top</a>
+        <a href="#top">Top</a>
     </div>
     <!-- top버튼 끝 -->
 </body>
