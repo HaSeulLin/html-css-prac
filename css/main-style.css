@@ -28,6 +28,7 @@ body{
     background-color: #2d3092d5;
 /*    background: linear-gradient(black,#2d3192cc); */
     color: white;
+    z-index: 100;
 }
 .header>.nav{
     max-width: 1000px;
@@ -38,12 +39,17 @@ body{
     padding: 10px 20px;
     align-items: center;
 }
+
 .header>.nav>.nav-menu{
     display: flex;
     width: 40%;
     justify-content: space-evenly;
 }
-.header>.nav>.nav-title{
+.header>.nav>a{
+    text-decoration: none;
+    color: white;
+}
+.header>.nav>a>.nav-title{
     width: 150px;
     font-size: 1.5rem;
     text-align: center;
@@ -53,9 +59,24 @@ body{
     color: white;
     font-size: 1.4rem;
     font-family: 'NanumSquareNeo-Variable';
-
 }
-
+.header>.nav>.nav-menu a::after{
+    content: "";
+    display: inline-block;
+    width: 0px;    height: 4px;
+    background-color: #ffff08;
+    position: absolute;
+    bottom: 0px;
+    margin-left: -100px;
+}
+.header>.nav>.nav-menu a:hover:after{
+    color: #ffff08;
+    width: 110px;
+    transition: all 0.3s;
+}
+.header>.nav>.nav-menu a:hover{
+    color: #ffff08;
+}
 
 /* main */
 /* section 규칙 부분은 위쪽에 뒀음 */
@@ -137,24 +158,21 @@ body{
 .section3-gallery>.gallery-board>h4{
     font-weight: bold;
 }
-.section3-gallery>.gallery-board:nth-child(2)>.image{
-    margin: 15px;
+.section3-gallery>.gallery-board:nth-child(2) .image{
     width: 250px;
     height: 250px;
     background-image: url(../img/festival.jpg);
     background-position: center;
     background-size: cover;
 }
-.section3-gallery>.gallery-board:nth-child(3)>.image{
-    margin: 15px;
+.section3-gallery>.gallery-board:nth-child(3) .image{
     width: 250px;
     height: 250px;
     background-image: url(../img/festival.jpg);
     background-position: center;
     background-size: cover;
 }
-.section3-gallery>.gallery-board:nth-child(4)>.image{
-    margin: 15px;
+.section3-gallery>.gallery-board:nth-child(4) .image{
     width: 250px;
     height: 250px;
     background-image: url(../img/festival.jpg);
@@ -167,6 +185,20 @@ body{
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 20px;
+}
+.section3-gallery>.gallery-title>a:hover{
+    background-color: #eb5d99;
+    transition: all 0.2s;
+}
+.section3-gallery>.gallery-board>.image-wrap{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin:15px;
+}
+.section3-gallery>.gallery-board .image:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
 }
 
 
@@ -187,10 +219,13 @@ body{
     font-weight: bolder;
     padding: 0 50px 0 0;
 }
+.section4-news>table tr:hover td{
+    color: #eb5d99;
+}
 .section4-news>table tr td{
-    padding: 10px 0px;
-    border-top: 2px solid rgb(229, 220, 241);
-    border-bottom: 2px solid rgb(229, 220, 241);
+    padding: 15px 0px;
+    border-top: 2px solid #2d3092;
+    border-bottom: 2px solid #2d3092;
 }
 
 /* footer */
@@ -220,13 +255,55 @@ body{
     bottom: 10px;
     right: 10px;
     width: 100px;
-    height: 60px;
+    height: 63px;
     background-color: #2d3092;
     text-align: center;
     border-radius: 50%;
-    padding-top: 40px;
+    padding-top: 37px;
 }
 .top-button>a{
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+.top-button:hover{
+    background-color: #eb5d99;
+    transition: all 0.3s;
+}
+
+/* mobile button*/
+.nav>.mobile-button{
+    display: none;
+    background-image: url(../img/bars-solid.svg);
+    width: 35px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* 미디어 쿼리 - nav */
+@media screen and (max-width:767px){
+    .header {background-color: #eb5d99cc;}
+    .nav>.mobile-button{
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    .nav>.nav-menu{
+        flex-direction: column;
+        height: 60px;
+    }
+    .nav>.nav-menu>li{
+        display: none;
+    }
+    .nav>.mobile-button:hover+.nav-menu,
+    .nav>.nav-menu:hover{
+        height: 30vh;
+        transition: all 0.3s;
+}
+    .nav>.mobile-button:hover+.nav-menu>li,
+    .nav>.nav-menu:hover>li{
+        display: inline-block;
+    }
 }
